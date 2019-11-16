@@ -1,24 +1,13 @@
-$(document).ready(function() {
-    var userInput = "austin"
-    var queryUrl = "https://api.openweathermap.org/data/2.5/weather?q=Austin&appid=807697c8abaab370e791d61bef0eb5b3";
-    
-    var apiKey = "&api-key=807697c8abaab370e791d61bef0eb5b3"
-    var lat
-    var lon 
-    console.log(queryUrl)
-  
+$(document).ready(function(){
     $.ajax({
-        url: queryUrl,
+        url: "https://api.edamam.com/search?q=chicken&app_id=60ab0f71&app_key=c79295660b6df898dbeb376b6fbd7821",
         method: "GET"
     }).then(function(response){
-        lat = response.coord.lat
-        lon = response.coord.lon
-        queryUrl = "http://api.openweathermap.org/data/2.5/uvi/forecast?appid=807697c8abaab370e791d61bef0eb5b3&lat=" + lat + "&lon=" + lon
-        $.ajax({
-            url: queryUrl,
-            method: "GET"
-        }).then(function(response){
-            console.log(response[0].value)
-        })
+        console.log(response)
+        console.log(response.hits[0].recipe)
+        newDiv = $("<div>")
+        newDiv.innerHTML(response.hits[0].recipe)
+        console.log(newDiv)
+        $(".here").append(newDiv)
     })
-});
+})
