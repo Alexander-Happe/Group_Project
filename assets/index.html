@@ -1,20 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Meal Planner</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Grocery List App</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+</head>
+<body>
+    <!-- Title Banner, you shouldn't need mess with this -->
+    <div class="column is-primary">
+        <div class="is-1 has-text-centered box title-banner">Grocery List App</div>
+    </div>
 
-    <!-- Bootstrap CSS -->
+    <div class="container">
+        <div class="columns">
+            <!-- This is where the ingredients for the shopping list will go (append new items to classname: shopping-list) -->
+            <div class="column">
+                <div class="box shopping-list">
+                    <div class="subtitle">Shopping List</div>
+                    <div class="columns is-mobile">
+                        <input class="input column is-three-fifths-desktop is-two-fifths-mobile" type="text" placeholder="Add ingredient">
+                        <button class="column is-2-desktop is-1-mobile"><i class="fa fa-plus"></i></button>
+                    </div>
+                </div>
+            </div>
 
-    <link rel="stylesheet" href="/assets/style.css" />
-  </head>
-  <body>
-    <h1 class="here">Hello World</h1>
+            <div class="column is-half">
+                <div class="columns is-mobile">
+                <!-- This is the searchbar that should be hitting up the API for dishes -->
+                    <input class="input column is-two-fifths-mobile column is-two-fifths-desktop is-offset-one-fifth main-search" 
+                    type="text" placeholder="Search For Recepies">
+                    <button class="column is-1 main-search-button"><i class="fa fa-search"></i></button>
+                </div>
+                <!-- This is the box where the results of the API request should go (append new items to classname: dish-results) -->
+                <div class="box dish-results">Search Results Box</div>
+            </div>
+
+            <!-- This is where the ingredients for the selected dish will display (append ingredients from API to classname: ingredient-list) -->
+            <div class="column is-one-quarter">
+                <div class="box ingredient-list">
+                    <div class="subtitle">Ingredients List</div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -23,5 +54,5 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="script.js"></script>
     
-  </body>
+</body>
 </html>
