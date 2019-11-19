@@ -28,30 +28,31 @@
         <div class="column">
           <div class="box shopping-list">
             <div class="subtitle">Shopping List</div>
-            <div class="columns is-mobile">
-              <input
-                class="input column is-three-fifths-desktop is-two-fifths-mobile"
-                type="text"
-                placeholder="Add ingredient"
-                id="addItem"
-              />
-              <button id="addItemBtn" class="column is-2-desktop is-1-mobile">
-                <i class="fa fa-plus"></i>
-              </button>
-            </div>
+              <form class="columns is-mobile">
+                  <input
+                  class="input column is-three-fifths-desktop is-two-fifths-mobile"
+                  type="text"
+                  placeholder="Add ingredient"
+                  id="addItem"
+                />
+                <button type="submit" id="addItemBtn" class="column appButton is-2-desktop is-2-tablet is-2-mobile">
+                  <i class="fa fa-plus"></i>
+                </button>
+              </form>
             <ul id="shoppingList"></ul>
           </div>
         </div>
 
         <div class="column is-half">
-          <div class="columns is-mobile">
+          <div class="column subtitle has-text-centered">Search for Recepies</div>
+          <div class="columns is-mobile is-centered">
             <!-- This is the searchbar that should be hitting up the API for dishes -->
             <input
-              class="input column is-two-fifths-mobile column is-two-fifths-desktop is-offset-one-fifth main-search"
+              class="input column is-two-fifths-mobile column is-two-fifths-tablet column is-two-fifths-desktop main-search"
               type="text"
               placeholder="Search For Recepies"
             />
-            <button class="column is-1 main-search-button">
+            <button type="submit" class="column is-2-mobile is-1-desktop is-2-tablet appButton main-search-button">
               <i class="fa fa-search"></i>
             </button>
           </div>
@@ -62,7 +63,7 @@
         <!-- This is where the ingredients for the selected dish will display (append ingredients from API to classname: ingredient-list) -->
         <div class="column is-one-quarter">
           <div class="box ingredient-list">
-            <div class="subtitle">Recipe</div>
+            <div class="subtitle">Meals for the Week</div>
             <!-- remove these when you add in the clicked image info -->
             <h3>$-$$$$</h3>
             <h3>cooking instructions</h3>
