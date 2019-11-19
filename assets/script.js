@@ -44,6 +44,7 @@ $(document).ready(function() {
         }
     })
     
+
   });
   // adds user input from the shopping list input to the shopping list//
 
@@ -54,15 +55,20 @@ $(document).ready(function() {
       .val()
       .trim();
     // creates div for item and button
-    var newDiv = $("<div>")
-      .attr("class", "columns is-mobile shopitem");
+    var newDiv = $("<div>").attr("class", "columns is-mobile shopitem");
     // creates li //
     var newListItem = $("<li>")
-      .attr("class", "listItems column is-four-fifths-desktop is-two-thirds-tablet is-two-thirds-mobile")
+      .attr(
+        "class",
+        "listItems column is-four-fifths-desktop is-two-thirds-tablet is-two-thirds-mobile"
+      )
       .text(newItem);
     // adds a close button to the list items. //
     var addSpan = $("<button>")
-      .attr("class", "column is-2-desktop is-2-tablet is-2-mobile listButton")
+      .attr(
+        "class",
+        "column is-2-desktop is-2-tablet is-2-mobile listButton close"
+      )
       .text("X");
     // adds item and close span to the new div //
     newDiv.append(newListItem, addSpan);
@@ -75,15 +81,14 @@ $(document).ready(function() {
   $(document).on("click", ".listItems", checked);
 
   function checked() {
-    var myItem = $(this).toggleClass("checked");
+    var checkedItem = $(this).toggleClass("checked");
   }
   // Click on a close button to hide the current list item
-  // var close = $(".close");
-  // var i;
-  // for (i = 0; i < close.length; i++) {
-  //   close[i].onclick = function() {
-  //     var div = this.parentElement;
-  //     div.style.display = "none";
-  //   };
-  // }
+  $(document).on("click", ".close", close);
+
+  function close() {
+    $(this)
+      .parent()
+      .css("display", "none");
+  }
 });
