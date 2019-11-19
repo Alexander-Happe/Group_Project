@@ -62,6 +62,15 @@ ul li {
   transition: 0.2s;
 }
 
+
+/* When clicked on, add a background color and strike out text */
+.checked {
+  background: #888;
+  color: #fff;
+  text-decoration: line-through;
+}
+
 .shopitem {
   margin-top: 10px;
 }
+

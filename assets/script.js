@@ -66,6 +66,12 @@ $(document).ready(function() {
     $("#addItem").val("");
   });
 
+  // Add a "checked" symbol when clicking on a list item
+  $(document).on("click", ".listItems", checked);
+
+  function checked() {
+    var myItem = $(this).toggleClass("checked");
+  }
   // Click on a close button to hide the current list item
   // var close = $(".close");
   // var i;
