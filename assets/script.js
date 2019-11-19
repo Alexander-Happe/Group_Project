@@ -1,7 +1,6 @@
 $(document).ready(function() {
     $(".main-search-button").on("click", function(){
         var userInput = $(".main-search").val().trim()
-        console.log(userInput)
         $.ajax({
             url:
             "https://api.edamam.com/search?q=" + userInput + "&app_id=60ab0f71&app_key=c79295660b6df898dbeb376b6fbd7821",
@@ -32,8 +31,11 @@ $(document).ready(function() {
                 //adds image to the divs
                 recipeDiv.append(imgs)
                 $(".dish-results").append(recipeDiv)
-                console.log(recipeDiv)
                 //adds buttons for adding ingredients
+                var ingredientBttn = $("<button>")
+                ingredientBttn.text("See ingredients!")
+                ingredientBttn.attr("class", "ingredients-button")
+                recipeDiv.append(ingredientBttn)
         }
     })
     
