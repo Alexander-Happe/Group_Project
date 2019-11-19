@@ -62,7 +62,6 @@ ul li {
   transition: 0.2s;
 }
 
-
 /* When clicked on, add a background color and strike out text */
 .checked {
   background: #888;
@@ -72,5 +71,36 @@ ul li {
 
 .shopitem {
   margin-top: 10px;
+}
+
+.dish-results {
+  padding: none;
+}
+
+.name {
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-bottom: 40px;
+}
+
+.search-item {
+  margin-top: 20px;
+  margin-left: 5px;
+  margin-right: 5px;
+  color: whitesmoke;
+  border: none;
+  background-color: rgb(0, 82, 0);
+}
+
+.search-item:hover {
+  background-color: rgb(0, 138, 0);
+}
+
+.search-item:active {
+  background-color: rgb(0, 63, 0);
+}
+
+.search-item::selection {
+  background-color: rgb(0, 82, 0);
 }
 
