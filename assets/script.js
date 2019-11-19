@@ -20,6 +20,7 @@ $(document).ready(function() {
     var newListItem = $("<li>")
       .attr("class", "listItems")
       .text(newItem);
+    event.preventDefault("#addItemBtn")
     $("#shoppingListItems").prepend(newListItem);
     $("#addItem").val("");
     // adds a close button to the list items. //

@@ -29,15 +29,17 @@
           <div class="box shopping-list">
             <div class="subtitle">Shopping List</div>
             <div class="columns is-mobile">
-              <input
-                class="input column is-three-fifths-desktop is-two-fifths-mobile"
-                type="text"
-                placeholder="Add ingredient"
-                id="addItem"
-              />
-              <button id="addItemBtn" class="column is-2-desktop is-1-mobile">
-                <i class="fa fa-plus"></i>
-              </button>
+              <form>
+                  <input
+                  class="input column is-three-fifths-desktop is-two-fifths-mobile"
+                  type="text"
+                  placeholder="Add ingredient"
+                  id="addItem"
+                />
+                <input type="submit" id="addItemBtn" class="column is-2-desktop is-1-mobile">
+                  <i class="fa fa-plus"></i>
+               </input>
+              </form>
             </div>
             <ul id="shoppingListItems"></ul>
           </div>
