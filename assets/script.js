@@ -7,7 +7,7 @@ $(document).ready(function() {
       url:
         "https://api.edamam.com/search?q=" +
         userInput +
-        "&app_id=60ab0f71&app_key=c79295660b6df898dbeb376b6fbd7821",
+        "&app_id=aa7e15d0&app_key=95bc405156202f2376c3c63ef483565b",
       method: "GET"
     }).then(function(response) {
       var hits = response.hits;
@@ -40,6 +40,7 @@ $(document).ready(function() {
           "class",
           "ingredients-button column is-5-desktop is-5-tablet is-5-mobile search-item"
         );
+        ingredientBttn.attr("value", hits[i].recipe.ingredientLines);
         resultbuttons.append(ingredientBttn);
         //makes new image tags
         var imgs = $("<img>");
@@ -53,9 +54,17 @@ $(document).ready(function() {
       }
     });
   });
+  $(document).on("click", ".ingredients-button", function() {
+    console.log($(this).val());
+    console.log("working");
+  });
   // adds user input from the shopping list input to the shopping list//
 
   $("#addItemBtn").on("click", function() {
+    createListItems();
+  });
+
+  function createListItems() {
     // takes in item from add textarea
     event.preventDefault();
     var newItem = $("#addItem")
@@ -91,7 +100,7 @@ $(document).ready(function() {
       var newDivObjToString = JSON.stringify($(newDiv));
       console.log(newDivObjToString);
     }
-  });
+  }
 
   // Add a line-through when clicking on a list item
   $(document).on("click", ".listItems", checked);
