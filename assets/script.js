@@ -58,8 +58,8 @@ $(document).ready(function() {
     console.log($(this).val());
     console.log("working");
   });
-  // adds user input from the shopping list input to the shopping list//
 
+  // adds user input from the shopping list input to the shopping list//
   $("#addItemBtn").on("click", function() {
     createListItems();
   });
@@ -70,7 +70,6 @@ $(document).ready(function() {
     var newItem = $("#addItem")
       .val()
       .trim();
-    console.log(newItem);
     if (newItem === "") {
       $("#addItem").val("");
     } else {
@@ -96,9 +95,6 @@ $(document).ready(function() {
       // resets the texts field to blank
       $("#addItem").val("");
       localStorage.setItem(newItem, newItem);
-      console.log($(newDiv));
-      var newDivObjToString = JSON.stringify($(newDiv));
-      console.log(newDivObjToString);
     }
   }
 
@@ -110,13 +106,16 @@ $(document).ready(function() {
   }
   // Click on a close button to hide the current list item
   $(document).on("click", ".close", close);
-  console.log(this);
-  function close() {
-    $(this)
-      .parent()
-      .css("display", "none");
 
-    localStorage.removeItem();
+  function close() {
+    var self = $(this);
+    self.parent().css("display", "none");
+    localStorage.removeItem(
+      self
+        .parent()
+        .find("li")
+        .text()
+    );
   }
 
   // add grocery list items to local storage
