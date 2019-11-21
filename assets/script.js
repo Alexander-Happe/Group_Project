@@ -25,6 +25,7 @@ $(document).ready(function() {
                 //adds links to the divs
                 var links = $("<button>")
                 var recipeLinks = hits[i].recipe.url
+                console.log(recipeLinks)
                 links.addClass("column is-5-desktop is-5-tablet is-5-mobile search-item")
                 links.attr("href", recipeLinks)
                 links.text("Recepie Source")
@@ -51,7 +52,29 @@ $(document).ready(function() {
   });
   $(document).on("click", ".ingredients-button", function(){
     console.log($(this).val())
-    console.log("working")
+    var ingredientsShop = $(this).val()
+    // creates div for item and button
+    var newDiv = $("<div>").attr("class", "columns is-mobile shopitem");
+    // creates li //
+    var newListItem = $("<li>")
+      .attr(
+        "class",
+        "listItems column is-four-fifths-desktop is-two-thirds-tablet is-two-thirds-mobile"
+      )
+      .text(ingredientsShop);
+    // adds a close button to the list items. //
+    var addSpan = $("<button>")
+      .attr(
+        "class",
+        "column is-2-desktop is-2-tablet is-2-mobile listButton close"
+      )
+      .text("X");
+    // adds item and close span to the new div //
+    newDiv.append(newListItem, addSpan);
+    $("#shoppingList").prepend(newDiv);
+    // resets the texts field to blank
+    $("#addItem").val("");
+
   })
   // adds user input from the shopping list input to the shopping list//
   
