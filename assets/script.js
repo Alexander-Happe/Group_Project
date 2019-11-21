@@ -2,9 +2,11 @@ $(document).ready(function() {
     $(".main-search-button").on("click", function(){
         var userInput = $(".main-search").val().trim()
         $.ajax({
-            url:
-            "https://api.edamam.com/search?q=" + userInput + "&app_id=60ab0f71&app_key=c79295660b6df898dbeb376b6fbd7821",
-            method: "GET"
+          url:
+          "https://api.edamam.com/search?q=" +
+          userInput +
+          "&app_id=aa7e15d0&app_key=95bc405156202f2376c3c63ef483565b",
+          method: "GET"
         }).then(function(response) {
             var hits = response.hits
             console.log(response.hits)
