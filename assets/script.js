@@ -16,8 +16,11 @@ $(document).ready(function() {
                 var recipeDiv = $("<div>");
                 recipeDiv.addClass("name column is-5 has-text-centered subtitle");
                 //adds name of the recipes
-                var names = hits[i].recipe.label;
-                recipeDiv.text(names);
+                var recipetitle = $("<div>")
+                recipetitle.addClass("column is-full recipe-title")
+                var names = hits[i].recipe.label
+                recipetitle.text(names)
+                recipeDiv.append(recipetitle)
                 //adds div for buttons (style) ****This is so bulma understands how to lay out the buttons
                 var resultbuttons = $("<div>")
                 resultbuttons.addClass("columns is-mobile is-centered")
@@ -31,7 +34,7 @@ $(document).ready(function() {
                 resultbuttons.append(links)
                 //adds buttons for adding ingredients
                 var ingredientBttn = $("<button>")
-                ingredientBttn.text("See Ingredients")
+                ingredientBttn.text("Save Recipe")
                 ingredientBttn.attr("class", "ingredients-button column is-5-desktop is-5-tablet is-5-mobile search-item")
                 ingredientBttn.attr("value", hits[i].recipe.ingredientLines)
                 resultbuttons.append(ingredientBttn)
@@ -40,7 +43,7 @@ $(document).ready(function() {
                 var sourceImg = hits[i].recipe.image
                 imgs.attr("src", sourceImg)
                 imgs.attr("alt", "recipe img")
-                imgs.attr("class", "img image is-250x250")
+                imgs.attr("class", "img")
                 //adds image to the divs
                 recipeDiv.append(imgs)
                 $(".dish-results").append(recipeDiv)

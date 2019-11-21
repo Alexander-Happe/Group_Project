@@ -9,10 +9,12 @@
 
 .main-search {
   margin-top: 3px;
+  margin-bottom: 20px;
 }
 
 .main-search-button {
   margin-top: 3px;
+  margin-bottom: 20px;
 }
 
 .appButton {
@@ -102,5 +104,13 @@ ul li {
 
 .search-item::selection {
   background-color: rgb(0, 82, 0);
+}
+
+.img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 250px;
+  height: 250px;
 }
 
