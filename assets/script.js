@@ -156,6 +156,34 @@ $(document).ready(function() {
     );
   }
 
+  //Pulls all previously added list items from local storage and displays them.
+  function showStorage() {
+  var values = [],
+      keys = Object.keys(localStorage),
+      i = keys.length;
+  while ( i-- ) {
+      values.push( localStorage.getItem(keys[i]));
+  }
+  for (j = 0; j < values.length; j++) {
+    var newDiv = $("<div>").attr("class", "columns is-mobile shopitem");
+    var newListItem = $("<li>")
+      .attr(
+        "class",
+        "listItems column is-four-fifths-desktop is-two-thirds-tablet is-two-thirds-mobile"
+      )
+      .text(values[j]);
+    var addSpan = $("<button>")
+      .attr(
+        "class",
+        "column is-2-desktop is-2-tablet is-2-mobile listButton close"
+      )
+      .text("X");
+    newDiv.append(newListItem, addSpan);
+    $("#shoppingList").prepend(newDiv);
+  }
+}
+showStorage();
+
   // add grocery list items to local storage
   // var myList = $(document).$(".listItems");
 
