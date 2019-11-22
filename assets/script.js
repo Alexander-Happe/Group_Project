@@ -1,4 +1,10 @@
 $(document).ready(function() {
+  function savedList() {
+    for (var i = 0; i < localStorage.length; i++) {
+      // do something with localStorage.getItem(localStorage.key(i));
+    }
+  }
+
   $(".main-search-button").on("click", function() {
     var userInput = $(".main-search")
       .val()
@@ -56,31 +62,37 @@ $(document).ready(function() {
     });
   });
   $(document).on("click", ".ingredients-button", function() {
-    console.log($(this).val());
-    var ingredientsShop = $(this).val();
-    // creates div for item and button
-    var newDiv = $("<div>").attr("class", "columns is-mobile shopitem");
-    // creates li //
-    var newListItem = $("<li>")
-      .attr(
-        "class",
-        "listItems column is-four-fifths-desktop is-two-thirds-tablet is-two-thirds-mobile"
-      )
-      .text(ingredientsShop);
+    var ingredientsShop = $(this)
+      .val()
+      .split(",");
 
-    // adds a close button to the list items. //
-    var addSpan = $("<button>")
-      .attr(
-        "class",
-        "column is-2-desktop is-2-tablet is-2-mobile listButton close"
-      )
-      .text("X");
+    var iterator = ingredientsShop.values();
+    for (var value of iterator) {
+      // creates div for item and button
+      var newDiv = $("<div>").attr("class", "columns is-mobile shopitem");
+      // creates li //
+      var newListItem = $("<li>")
+        .attr(
+          "class",
+          "listItems column is-four-fifths-desktop is-two-thirds-tablet is-two-thirds-mobile"
+        )
+        .text(value);
 
-    // adds item and close span to the new div //
-    newDiv.append(newListItem, addSpan);
-    $("#shoppingList").prepend(newDiv);
-    // resets the texts field to blank
-    $("#addItem").val("");
+      // adds a close button to the list items. //
+      var addSpan = $("<button>")
+        .attr(
+          "class",
+          "column is-2-desktop is-2-tablet is-2-mobile listButton close"
+        )
+        .text("X");
+
+      // adds item and close span to the new div //
+      newDiv.append(newListItem, addSpan);
+      $("#shoppingList").append(newDiv);
+      // resets the texts field to blank
+      $("#addItem").val("");
+      localStorage.setItem(value, value);
+    }
   });
   // adds user input from the shopping list input to the shopping list//
   $("#addItemBtn").on("click", function() {
