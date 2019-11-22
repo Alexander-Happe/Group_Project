@@ -1,10 +1,4 @@
 $(document).ready(function() {
-  function savedList() {
-    for (var i = 0; i < localStorage.length; i++) {
-      // do something with localStorage.getItem(localStorage.key(i));
-    }
-  }
-
   $(".main-search-button").on("click", function() {
     var userInput = $(".main-search")
       .val()
@@ -65,7 +59,6 @@ $(document).ready(function() {
     var ingredientsShop = $(this)
       .val()
       .split(",");
-
     var iterator = ingredientsShop.values();
     for (var value of iterator) {
       // creates div for item and button
