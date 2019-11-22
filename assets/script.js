@@ -36,7 +36,7 @@ $(document).ready(function() {
         resultbuttons.append(links);
         //adds buttons for adding ingredients
         var ingredientBttn = $("<button>");
-        ingredientBttn.text("See Ingredients");
+        ingredientBttn.text("Save Ingredients");
         ingredientBttn.attr(
           "class",
           "ingredients-button column is-5-desktop is-5-tablet is-5-mobile search-item"
@@ -58,7 +58,11 @@ $(document).ready(function() {
     });
   });
   $(document).on("click", ".ingredients-button", function() {
-    var linkDiv = $("<div>");
+    var linkDiv = $("<div>")
+    .attr(
+      "class",
+      "savedDish"
+    );
     var saveLink = $("<a>");
     console.log($(this).attr("data-link"));
     saveLink.attr("href", $(this).attr("data-link"));

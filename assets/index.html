@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Grocery List App</title>
+    <title>Jiffy Meals</title>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css"
@@ -18,7 +18,7 @@
     <!-- Title Banner, you shouldn't need mess with this -->
     <div class="column is-primary">
       <div class="is-1 has-text-centered box title-banner">
-        Grocery List App
+        Jiffy Meals
       </div>
     </div>
 
@@ -51,8 +51,8 @@
           <div class="column subtitle has-text-centered">
             Search for Recepies
           </div>
-          <div class="columns is-mobile is-centered">
-            <!-- This is the searchbar that should be hitting up the API for dishes -->
+          <form class="columns is-mobile is-centered">
+            <!-- This is the searchbar that should be hitting up the API for dishes --> 
             <input
               class="input column is-two-fifths-mobile column is-two-fifths-tablet column is-two-fifths-desktop main-search"
               type="text"
@@ -64,7 +64,7 @@
             >
               <i class="fa fa-search"></i>
             </button>
-          </div>
+          </form>
           <!-- This is the box where the results of the API request should go (append new items to classname: dish-results) -->
           <div class="box dish-results columns is-multiline is-centered"></div>
         </div>
