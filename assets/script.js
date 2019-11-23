@@ -25,13 +25,14 @@ $(document).ready(function() {
         resultbuttons.addClass("columns is-mobile is-centered");
         recipeDiv.append(resultbuttons);
         //adds links to the divs
-        var links = $("<button>");
+        var links = $("<a>");
         var recipeLinks = hits[i].recipe.url;
         console.log(recipeLinks);
         links.addClass(
           "column is-5-desktop is-5-tablet is-5-mobile search-item"
         );
         links.attr("href", recipeLinks);
+        links.attr("target", "_blank");
         links.text("Recepie Source");
         resultbuttons.append(links);
         //adds buttons for adding ingredients
@@ -66,6 +67,7 @@ $(document).ready(function() {
     var saveLink = $("<a>");
     console.log($(this).attr("data-link"));
     saveLink.attr("href", $(this).attr("data-link"));
+    saveLink.attr("target", "_blank");
     saveLink.text($(this).attr("data-name"));
     linkDiv.append(saveLink);
     $(".savedMeals").append(linkDiv);
