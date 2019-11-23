@@ -23,7 +23,7 @@ $(document).ready(function() {
               resultbuttons.addClass("columns is-mobile is-centered")
               recipeDiv.append(resultbuttons)
               //adds links to the divs
-              var links = $("<button>")
+              var links = $("<a>")
               var recipeLinks = hits[i].recipe.url
               console.log(recipeLinks)
               links.addClass("column is-5-desktop is-5-tablet is-5-mobile search-item")
