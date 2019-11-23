@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Jiffy Meals</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css"
+    />
+    <link rel="stylesheet" href="assets/style.css" />
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"
+    ></script>
+  </head>
+  <body>
+    <!-- Title Banner, you shouldn't need mess with this -->
+    <div class="column is-primary">
+      <div class="is-1 has-text-centered box title-banner">
+        Jiffy Meals
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="columns">
+        <!-- This is where the ingredients for the shopping list will go (append new items to classname: shopping-list) -->
+        <div class="column">
+          <div class="box shopping-list">
+            <div class="subtitle">Shopping List</div>
+            <form class="columns is-mobile">
+              <input
+                class="input column is-three-fifths-desktop is-two-fifths-mobile"
+                type="text"
+                placeholder="Add ingredient"
+                id="addItem"
+              />
+              <button
+                type="submit"
+                id="addItemBtn"
+                class="column appButton is-2-desktop is-2-tablet is-2-mobile"
+              >
+                <i class="fa fa-plus"></i>
+              </button>
+            </form>
+            <ul id="shoppingList"></ul>
+          </div>
+        </div>
+
+        <div class="column is-half">
+          <div class="column subtitle has-text-centered">
+            Search for Recepies
+          </div>
+          <div class="columns is-mobile is-centered">
+            <!-- This is the searchbar that should be hitting up the API for dishes --> 
+            <input
+              class="input column is-two-fifths-mobile column is-two-fifths-tablet column is-two-fifths-desktop main-search"
+              type="text"
+              placeholder="Search For Recepies"
+            />
+            <button
+              type="submit"
+              class="column is-2-mobile is-1-desktop is-2-tablet appButton main-search-button"
+            >
+              <i class="fa fa-search"></i>
+            </button>
+          </div>
+          <!-- This is the box where the results of the API request should go (append new items to classname: dish-results) -->
+          <div class="box dish-results columns is-multiline is-centered"></div>
+        </div>
+
+        <!-- This is where the ingredients for the selected dish will display (append ingredients from API to classname: ingredient-list) -->
+        <div class="column is-one-quarter">
+          <div class="box ingredient-list">
+            <div class="subtitle savedMeals">Meals for the Week</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="assets/script.js"></script>
+  </body>
+</html>
